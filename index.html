@@ -1,817 +1,697 @@
+
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AZAAN WEB STUDIO | Elite Web Design & Digital Experiences</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0714">
+  <meta name="description" content="AZAAN WEB STUDIO (AWS) creates modern, responsive and creative websites for businesses and brands.">
+  <title>AZAAN WEB STUDIO | AWS</title>
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        neon: {
-                            DEFAULT: '#00FF66',
-                            bright: '#39FF14',
-                            glow: 'rgba(0, 255, 102, 0.35)',
-                            dark: '#00cc52',
-                        },
-                        dark: {
-                            bg: '#050508',
-                            card: '#0d0e15',
-                            border: '#1f2430',
-                            accent: '#121520'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    },
-                    animation: {
-                        'pulse-glow': 'pulseGlow 2.5s infinite ease-in-out',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 15px rgba(0, 255, 102, 0.3), inset 0 0 15px rgba(0, 255, 102, 0.15)' },
-                            '50%': { boxShadow: '0 0 30px rgba(0, 255, 102, 0.7), inset 0 0 25px rgba(0, 255, 102, 0.35)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        body {
-            background-color: #050508;
-            color: #e2e8f0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-        }
-
-        .neon-glow-text {
-            text-shadow: 0 0 20px rgba(0, 255, 102, 0.6);
-        }
-
-        .neon-border {
-            border: 1px solid rgba(0, 255, 102, 0.25);
-            transition: all 0.3s ease;
-        }
-
-        .neon-border:hover {
-            border-color: rgba(0, 255, 102, 0.8);
-            box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
-        }
-
-        .glass-card {
-            background: rgba(13, 14, 21, 0.75);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.07);
-        }
-
-        .glass-card-hover {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass-card-hover:hover {
-            transform: translateY(-5px);
-            border-color: rgba(0, 255, 102, 0.4);
-            box-shadow: 0 12px 30px -10px rgba(0, 255, 102, 0.25);
-        }
-
-        .grid-bg {
-            background-size: 40px 40px;
-            background-image: 
-                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050508;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2430;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00FF66;
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="grid-bg relative antialiased selection:bg-neon selection:text-black">
+<body>
 
-    <!-- Background Glow Blobs -->
-    <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] bg-neon/10 rounded-full blur-[140px] pointer-events-none z-0"></div>
-    <div class="fixed bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-neon/5 rounded-full blur-[160px] pointer-events-none z-0"></div>
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-logo">AWS<span>.</span></div>
+    <div class="loader-line"><span></span></div>
+    <p>BUILDING SOMETHING CREATIVE</p>
+  </div>
 
-    <!-- Header Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-dark-bg/80 border-b border-white/10" id="main-header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Brand Logo -->
-                <a href="#home" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-neon/10 border border-neon/40 flex items-center justify-center text-neon group-hover:bg-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,255,102,0.2)]">
-                        <i data-lucide="code-2" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <span class="font-extrabold text-xl tracking-wider text-white group-hover:text-neon transition-colors">AZAAN</span>
-                        <span class="text-xs font-mono block tracking-widest text-neon uppercase -mt-1">WEB STUDIO</span>
-                    </div>
-                </a>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+  <div class="noise-overlay"></div>
 
-                <!-- Desktop Nav Menu -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-                    <a href="#home" class="text-gray-300 hover:text-neon transition-colors">Home</a>
-                    <a href="#services" class="text-gray-300 hover:text-neon transition-colors">Services</a>
-                    <a href="#portfolio" class="text-gray-300 hover:text-neon transition-colors">Portfolio</a>
-                    <a href="#process" class="text-gray-300 hover:text-neon transition-colors">Process</a>
-                    <a href="#about" class="text-gray-300 hover:text-neon transition-colors">About</a>
-                    <a href="#contact" class="text-gray-300 hover:text-neon transition-colors">Contact</a>
-                </nav>
+  <!-- NAVBAR -->
+  <header class="header" id="header">
+    <nav class="navbar container">
+      <a href="#home" class="brand" aria-label="AWS Home">
+        <span class="brand-mark">A<span>W</span>S</span>
+        <span class="brand-name">AZAAN WEB <strong>STUDIO</strong></span>
+      </a>
 
-                <!-- Header CTA Button -->
-                <div class="hidden md:flex items-center">
-                    <a href="#contact" class="px-5 py-2.5 rounded-lg font-mono text-xs tracking-wider uppercase font-bold bg-neon/10 border border-neon text-neon hover:bg-neon hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(0,255,102,0.25)] flex items-center gap-2">
-                        <span>Get A Quote</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                    </a>
-                </div>
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation" aria-expanded="false"
+        aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-gray-300 hover:text-neon hover:bg-white/5 transition-colors" aria-label="Toggle Menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a class="nav-link active" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#services">Services</a></li>
+        <li><a class="nav-link" href="#projects">Projects</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Let's Talk <span>↗</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="availability">
+            <span class="status-dot"></span>
+            CREATIVE WEB DEVELOPER
+          </div>
+
+          <p class="eyebrow">WELCOME TO AZAAN WEB STUDIO</p>
+
+          <h1>
+            Hi , I'M
+            <br>
+            <span class="gradient-text">  <u>AZAAN KHAN</u> <br> AND I'M A <br> WEB DEVELOPER.</span>
+          </h1>
+
+          <p class="hero-description">
+            I build modern, responsive and engaging websites that help
+            businesses bring their ideas to life on the internet.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              Explore My Work <span>↗</span>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              Hire Me <span>→</span>
+            </a>
+          </div>
+
+          <div class="hero-social">
+            <span>LET'S CONNECT</span>
+            <span class="social-line"></span>
+            <a href="#contact" aria-label="Contact AWS">AWS ↗</a>
+          </div>
         </div>
 
-        <!-- Mobile Nav Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-dark-card/95 border-b border-white/10 backdrop-blur-xl px-6 py-6 transition-all">
-            <div class="flex flex-col space-y-4 font-medium">
-                <a href="#home" class="mobile-nav-link text-gray-300 hover:text-neon py-2">Home</a>
-                <a href="#services" class="mobile-nav-link text-gray-300 hover:text-neon py-2">Services</a>
-                <a href="#portfolio" class="mobile-nav-link text-gray-300 hover:text-neon py-2">Portfolio</a>
-                <a href="#process" class="mobile-nav-link text-gray-300 hover:text-neon py-2">Process</a>
-                <a href="#about" class="mobile-nav-link text-gray-300 hover:text-neon py-2">About</a>
-                <a href="#contact" class="mobile-nav-link text-gray-300 hover:text-neon py-2">Contact</a>
-                <a href="#contact" class="mobile-nav-link mt-2 w-full text-center py-3 rounded-lg font-mono text-xs uppercase font-bold bg-neon text-black">Get A Quote</a>
+        <div class="hero-visual reveal">
+          <div class="visual-orbit orbit-one"></div>
+          <div class="visual-orbit orbit-two"></div>
+
+          <div class="floating-chip chip-top">
+            <span class="chip-icon">&lt;/&gt;</span>
+            <span><strong>Clean Code</strong><small>Built with care</small></span>
+          </div>
+
+          <div class="profile-card">
+            <div class="profile-card-top">
+              <span class="window-dots"><i></i><i></i><i></i></span>
+              <span class="card-label">AWS / CREATIVE LAB</span>
             </div>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <!-- Status Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neon/10 border border-neon/30 text-neon font-mono text-xs font-semibold mb-8 animate-pulse-glow">
-                    <span class="w-2 h-2 rounded-full bg-neon animate-ping"></span>
-                    <span class="w-2 h-2 rounded-full bg-neon -ml-4"></span>
-                    <span>AVAILABLE FOR NEW PROJECTS</span>
-                </div>
-
-                <!-- Main Tagline -->
-                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-8">
-                    Crafting <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon via-emerald-300 to-neon-bright neon-glow-text">High-Converting</span> & Impactful Digital Experiences
-                </h1>
-
-                <!-- Subtitle -->
-                <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10 font-normal">
-                    AZAAN WEB STUDIO turns complex business ideas into stunning, high-performance websites & intuitive UI/UX designs that drive real growth.
-                </p>
-
-                <!-- Hero CTAs -->
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-                    <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-neon text-black font-extrabold text-sm uppercase tracking-wider hover:bg-neon-bright transition-all shadow-[0_0_30px_rgba(0,255,102,0.4)] flex items-center justify-center gap-2 group">
-                        <span>Explore Selected Works</span>
-                        <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform"></i>
-                    </a>
-                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-white font-bold text-sm uppercase tracking-wider hover:border-neon/50 hover:bg-white/5 transition-all flex items-center justify-center gap-2">
-                        <span>Let's Build Together</span>
-                        <i data-lucide="message-square" class="w-4 h-4 text-neon"></i>
-                    </a>
-                </div>
-
-                <!-- Stats Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-20 text-left">
-                    <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-neon/30 transition-all">
-                        <div class="font-mono text-3xl sm:text-4xl font-extrabold text-neon mb-1">50+</div>
-                        <div class="text-sm text-gray-400 font-medium">Projects Delivered</div>
-                        <div class="text-xs text-gray-500 mt-1">Global clients across multiple industries</div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-neon/30 transition-all">
-                        <div class="font-mono text-3xl sm:text-4xl font-extrabold text-neon mb-1">99.8%</div>
-                        <div class="text-sm text-gray-400 font-medium">Client Satisfaction</div>
-                        <div class="text-xs text-gray-500 mt-1">Five-star reviews for quality & precision</div>
-                    </div>
-                    <div class="glass-card p-6 rounded-2xl border border-white/5 hover:border-neon/30 transition-all">
-                        <div class="font-mono text-3xl sm:text-4xl font-extrabold text-neon mb-1">5+ Yrs</div>
-                        <div class="text-sm text-gray-400 font-medium">Design & Dev Mastery</div>
-                        <div class="text-xs text-gray-500 mt-1">Crafting modern web standards</div>
-                    </div>
-                </div>
+            <div class="aws-emblem">
+              <div class="emblem-ring ring-a"></div>
+              <div class="emblem-ring ring-b"></div>
+              <div class="emblem-core">AWS<span>.</span></div>
+              <div class="emblem-spark spark-a"></div>
+              <div class="emblem-spark spark-b"></div>
+              <div class="emblem-spark spark-c"></div>
             </div>
+
+            <div class="profile-card-bottom">
+              <span class="profile-caption">DESIGN. DEVELOP. DELIVER.</span>
+              <span class="profile-code">001 / AWS</span>
+            </div>
+          </div>
+
+          <div class="floating-chip chip-bottom">
+            <span class="chip-icon">✳</span>
+            <span><strong>Creative Design</strong><small>Made for your brand</small></span>
+          </div>
+
+          <div class="visual-caption">DIGITAL CRAFTSMANSHIP <span>✦</span></div>
         </div>
+      </div>
+
+      <a class="scroll-indicator" href="#about">
+        <span class="scroll-mouse"></span>
+        SCROLL TO EXPLORE
+      </a>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 relative z-10 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-                <div>
-                    <div class="text-neon font-mono text-xs uppercase tracking-widest mb-3">// WHAT WE DO</div>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Our Core Services</h2>
-                </div>
-                <p class="text-gray-400 max-w-md mt-4 md:mt-0 text-sm leading-relaxed">
-                    Tailored digital solutions crafted with pixel perfection, modern tech stacks, and user-centered design strategies.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1 -->
-                <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center text-neon mb-8 group-hover:scale-110 transition-transform">
-                            <i data-lucide="layout" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon transition-colors">Custom Web Design</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Bespoke website designs built from scratch to align perfectly with your brand identity and conversion goals.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs font-mono text-gray-400 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Custom Aesthetics</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Fully Responsive</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> SEO Optimized Structure</li>
-                    </ul>
-                </div>
-
-                <!-- Service 2 -->
-                <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center text-neon mb-8 group-hover:scale-110 transition-transform">
-                            <i data-lucide="figma" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon transition-colors">UI/UX & Figma Design</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Interactive prototypes, wireframes, and design systems focused on user journey and flawless usability.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs font-mono text-gray-400 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Wireframing & Flow</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Interactive Prototypes</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Design System Kits</li>
-                    </ul>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center text-neon mb-8 group-hover:scale-110 transition-transform">
-                            <i data-lucide="code" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon transition-colors">Front-End Development</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            Clean, high-speed code using modern HTML5, Tailwind CSS, JavaScript, and React for buttery-smooth animations.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs font-mono text-gray-400 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Ultra Fast Load Times</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Dynamic Micro-Interactions</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Clean Architecture</li>
-                    </ul>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="glass-card glass-card-hover p-8 rounded-2xl flex flex-col justify-between group">
-                    <div>
-                        <div class="w-14 h-14 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center text-neon mb-8 group-hover:scale-110 transition-transform">
-                            <i data-lucide="shopping-bag" class="w-7 h-7"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-neon transition-colors">E-Commerce & Landing</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                            High-converting landing pages and modern online stores designed to turn website visitors into loyal customers.
-                        </p>
-                    </div>
-                    <ul class="space-y-2 text-xs font-mono text-gray-400 border-t border-white/5 pt-4">
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Conversion Rate Focused</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Payment Gateway Setup</li>
-                        <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-neon"></i> Analytics Integration</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- ABOUT -->
+    <section class="section section-border" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span>01</span> / GET TO KNOW ME</p>
+          <h2>More Than Code.<br><span class="gradient-text">A Creative Mindset.</span></h2>
+          <p class="section-description">
+            I turn concepts into thoughtful digital experiences through
+            design, development and attention to detail.
+          </p>
         </div>
+
+        <div class="about-grid">
+          <div class="about-card glass-card reveal">
+            <div class="about-icon">✦</div>
+            <p class="card-kicker">WHO I AM</p>
+            <h3>I'm Azaan, the creator behind AWS.</h3>
+            <p>
+              I focus on building attractive, user-friendly websites
+              with responsive layouts and smooth interactions. My goal
+              is to help brands establish a strong online presence.
+            </p>
+            <a class="text-link" href="#contact">Let's work together <span>↗</span></a>
+          </div>
+
+          <div class="about-card about-highlight reveal">
+            <div class="highlight-orb"></div>
+            <p class="card-kicker">MY APPROACH</p>
+            <h3>Every pixel has a purpose.</h3>
+            <p>
+              Good websites combine visual design, practical functionality
+              and a comfortable experience on every screen.
+            </p>
+            <div class="approach-tags">
+              <span>Creative</span><span>Responsive</span><span>User-focused</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-24 relative z-10 border-t border-white/5 bg-dark-bg/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                <div>
-                    <div class="text-neon font-mono text-xs uppercase tracking-widest mb-3">// PORTFOLIO</div>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Selected Work</h2>
-                </div>
-
-                <!-- Portfolio Filters -->
-                <div class="flex flex-wrap gap-2 mt-6 md:mt-0 font-mono text-xs">
-                    <button class="filter-btn active px-4 py-2 rounded-lg bg-neon text-black font-bold transition-all" data-filter="all">All</button>
-                    <button class="filter-btn px-4 py-2 rounded-lg glass-card text-gray-300 hover:text-neon hover:border-neon/40 transition-all" data-filter="uiux">UI/UX Design</button>
-                    <button class="filter-btn px-4 py-2 rounded-lg glass-card text-gray-300 hover:text-neon hover:border-neon/40 transition-all" data-filter="ecommerce">E-Commerce</button>
-                    <button class="filter-btn px-4 py-2 rounded-lg glass-card text-gray-300 hover:text-neon hover:border-neon/40 transition-all" data-filter="landing">Landing Pages</button>
-                </div>
-            </div>
-
-            <!-- Portfolio Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
-                
-                <!-- Project 1 -->
-                <div class="portfolio-item glass-card rounded-2xl overflow-hidden group border border-white/5 hover:border-neon/40 transition-all duration-300" data-category="ecommerce">
-                    <div class="relative overflow-hidden aspect-[16/10]">
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop" alt="Aether Cyber Store" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full font-mono text-[10px] uppercase font-bold bg-black/80 border border-neon/30 text-neon backdrop-blur-md">E-Commerce</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">Aether Cyber Tech Store</h3>
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-2">Futuristic hardware e-commerce platform with 3D product preview elements and seamless checkout flow.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-xs font-mono text-gray-500">React • Tailwind • WebGL</span>
-                            <button onclick="openModal('Aether Cyber Tech Store', 'Futuristic hardware e-commerce platform with 3D product preview elements and seamless checkout flow.', 'E-Commerce', 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop')" class="text-neon font-mono text-xs flex items-center gap-1 hover:underline">
-                                Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="portfolio-item glass-card rounded-2xl overflow-hidden group border border-white/5 hover:border-neon/40 transition-all duration-300" data-category="uiux">
-                    <div class="relative overflow-hidden aspect-[16/10]">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="Fintech Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full font-mono text-[10px] uppercase font-bold bg-black/80 border border-neon/30 text-neon backdrop-blur-md">UI/UX Design</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">VoltX Crypto Analytics Dashboard</h3>
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-2">High-density data visualization UI design for real-time crypto portfolio analytics & trading.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-xs font-mono text-gray-500">Figma • Design System</span>
-                            <button onclick="openModal('VoltX Crypto Analytics Dashboard', 'High-density data visualization UI design for real-time crypto portfolio analytics & trading.', 'UI/UX Design', 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop')" class="text-neon font-mono text-xs flex items-center gap-1 hover:underline">
-                                Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="portfolio-item glass-card rounded-2xl overflow-hidden group border border-white/5 hover:border-neon/40 transition-all duration-300" data-category="landing">
-                    <div class="relative overflow-hidden aspect-[16/10]">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="SaaS Landing Page" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full font-mono text-[10px] uppercase font-bold bg-black/80 border border-neon/30 text-neon backdrop-blur-md">Landing Page</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">Nexus AI Automation SaaS</h3>
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-2">Ultra-slick landing page designed for an enterprise AI automation company with dark cyberpunk aesthetics.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-xs font-mono text-gray-500">Tailwind • JS • GSAP</span>
-                            <button onclick="openModal('Nexus AI Automation SaaS', 'Ultra-slick landing page designed for an enterprise AI automation company with dark cyberpunk aesthetics.', 'Landing Page', 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop')" class="text-neon font-mono text-xs flex items-center gap-1 hover:underline">
-                                Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="portfolio-item glass-card rounded-2xl overflow-hidden group border border-white/5 hover:border-neon/40 transition-all duration-300" data-category="uiux">
-                    <div class="relative overflow-hidden aspect-[16/10]">
-                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop" alt="Mobile App UI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full font-mono text-[10px] uppercase font-bold bg-black/80 border border-neon/30 text-neon backdrop-blur-md">UI/UX Design</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">Aura Fitness Mobile Experience</h3>
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-2">Complete mobile app UI redesign featuring custom workout metrics and dark mode UI elements.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-xs font-mono text-gray-500">Figma • iOS UI Kit</span>
-                            <button onclick="openModal('Aura Fitness Mobile Experience', 'Complete mobile app UI redesign featuring custom workout metrics and dark mode UI elements.', 'UI/UX Design', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800&auto=format&fit=crop')" class="text-neon font-mono text-xs flex items-center gap-1 hover:underline">
-                                Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="portfolio-item glass-card rounded-2xl overflow-hidden group border border-white/5 hover:border-neon/40 transition-all duration-300" data-category="ecommerce">
-                    <div class="relative overflow-hidden aspect-[16/10]">
-                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop" alt="Streetwear Shop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full font-mono text-[10px] uppercase font-bold bg-black/80 border border-neon/30 text-neon backdrop-blur-md">E-Commerce</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">Urban Pulse Streetwear Store</h3>
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-2">High-vibe e-commerce website with interactive lookbook feature and fast checkout experience.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-xs font-mono text-gray-500">Shopify • Custom Theme</span>
-                            <button onclick="openModal('Urban Pulse Streetwear Store', 'High-vibe e-commerce website with interactive lookbook feature and fast checkout experience.', 'E-Commerce', 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop')" class="text-neon font-mono text-xs flex items-center gap-1 hover:underline">
-                                Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="portfolio-item glass-card rounded-2xl overflow-hidden group border border-white/5 hover:border-neon/40 transition-all duration-300" data-category="landing">
-                    <div class="relative overflow-hidden aspect-[16/10]">
-                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=800&auto=format&fit=crop" alt="Startup Showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/40 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
-                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full font-mono text-[10px] uppercase font-bold bg-black/80 border border-neon/30 text-neon backdrop-blur-md">Landing Page</span>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-neon transition-colors">HyperDrive EV Concept Landing</h3>
-                        <p class="text-gray-400 text-sm mb-4 line-clamp-2">Sleek landing page designed for an electric supercar concept with interactive specs configuration.</p>
-                        <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                            <span class="text-xs font-mono text-gray-500">HTML5 • Tailwind • JS</span>
-                            <button onclick="openModal('HyperDrive EV Concept Landing', 'Sleek landing page designed for an electric supercar concept with interactive specs configuration.', 'Landing Page', 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=800&auto=format&fit=crop')" class="text-neon font-mono text-xs flex items-center gap-1 hover:underline">
-                                Details <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow"><span>02</span> / MY TOOLKIT</p>
+          <h2>Skills & <span class="gradient-text">Technologies.</span></h2>
+          <p class="section-description">
+            The tools I use to design and build web experiences.
+          </p>
         </div>
+
+        <div class="skills-grid">
+          <article class="skill-card glass-card reveal">
+            <div class="skill-symbol html-symbol">5</div>
+            <h3>HTML5</h3>
+            <p>Structured web content</p>
+            <div class="skill-track"><span style="--skill:90%"></span></div>
+          </article>
+          <article class="skill-card glass-card reveal">
+            <div class="skill-symbol css-symbol">#</div>
+            <h3>CSS3</h3>
+            <p>Styling & animations</p>
+            <div class="skill-track"><span style="--skill:85%"></span></div>
+          </article>
+          <article class="skill-card glass-card reveal">
+            <div class="skill-symbol js-symbol">JS</div>
+            <h3>JavaScript</h3>
+            <p>Interactive functionality</p>
+            <div class="skill-track"><span style="--skill:70%"></span></div>
+          </article>
+          <article class="skill-card glass-card reveal">
+            <div class="skill-symbol responsive-symbol">↗</div>
+            <h3>Responsive UI</h3>
+            <p>Mobile-friendly layouts</p>
+            <div class="skill-track"><span style="--skill:85%"></span></div>
+          </article>
+        </div>
+        <p class="skills-note">Skill indicators are editable placeholders. Adjust them to reflect your actual abilities.</p>
+      </div>
     </section>
 
-    <!-- Design Process Section -->
-    <section id="process" class="py-24 relative z-10 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <div class="text-neon font-mono text-xs uppercase tracking-widest mb-3">// HOW WE WORK</div>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">Our Design Process</h2>
-                <p class="text-gray-400 mt-4 text-sm">A structured, battle-tested workflow designed to take your web project from concept to perfection smoothly.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-                <!-- Step 1 -->
-                <div class="glass-card p-8 rounded-2xl relative border border-white/5 hover:border-neon/40 transition-all">
-                    <div class="font-mono text-4xl font-extrabold text-neon/20 mb-6">01</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Discovery & Research</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        We analyze your brand vision, target audience, competitive landscape, and business goals to map out a winning strategy.
-                    </p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="glass-card p-8 rounded-2xl relative border border-white/5 hover:border-neon/40 transition-all">
-                    <div class="font-mono text-4xl font-extrabold text-neon/20 mb-6">02</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Wireframing & UI/UX</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Creating wireframes, user journeys, and high-fidelity interactive Figma prototypes focused on user engagement.
-                    </p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="glass-card p-8 rounded-2xl relative border border-white/5 hover:border-neon/40 transition-all">
-                    <div class="font-mono text-4xl font-extrabold text-neon/20 mb-6">03</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Development & Code</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Converting approved designs into clean, high-performance, and responsive code with smooth animations.
-                    </p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="glass-card p-8 rounded-2xl relative border border-white/5 hover:border-neon/40 transition-all">
-                    <div class="font-mono text-4xl font-extrabold text-neon/20 mb-6">04</div>
-                    <h3 class="text-xl font-bold text-white mb-3">Testing & Launch</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Rigorous cross-device testing, performance optimization, SEO setup, and smooth deployment to live servers.
-                    </p>
-                </div>
-            </div>
+    <!-- SERVICES -->
+    <section class="section section-border" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span>03</span> / WHAT I DO</p>
+          <h2>Services Built Around<br><span class="gradient-text">Your Vision.</span></h2>
+          <p class="section-description">
+            Digital solutions designed to give your business a strong online presence.
+          </p>
         </div>
+
+        <div class="services-grid">
+          <article class="service-card glass-card reveal">
+            <div class="service-top"><span class="service-icon">&lt;/&gt;</span><span class="service-number">01</span></div>
+            <h3>Website Development</h3>
+            <p>Modern websites with clean structure, interactive features and reliable layouts.</p>
+            <a href="#contact" class="service-link" aria-label="Ask about website development">↗</a>
+          </article>
+          <article class="service-card glass-card reveal">
+            <div class="service-top"><span class="service-icon">◈</span><span class="service-number">02</span></div>
+            <h3>UI & Web Design</h3>
+            <p>Engaging interfaces with clear visual hierarchy, thoughtful spacing and polished details.</p>
+            <a href="#contact" class="service-link" aria-label="Ask about UI and web design">↗</a>
+          </article>
+          <article class="service-card glass-card reveal">
+            <div class="service-top"><span class="service-icon">▦</span><span class="service-number">03</span></div>
+            <h3>E-commerce Websites</h3>
+            <p>Product displays and shopping experiences tailored to your online store.</p>
+            <a href="#contact" class="service-link" aria-label="Ask about e-commerce websites">↗</a>
+          </article>
+          <article class="service-card glass-card reveal">
+            <div class="service-top"><span class="service-icon">✳</span><span class="service-number">04</span></div>
+            <h3>Landing Pages</h3>
+            <p>Focused pages for products, campaigns, services and business promotions.</p>
+            <a href="#contact" class="service-link" aria-label="Ask about landing pages">↗</a>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <!-- About & Testimonials Grid -->
-    <section id="about" class="py-24 relative z-10 border-t border-white/5 bg-dark-bg/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- About Studio / Designer -->
-                <div class="lg:col-span-5">
-                    <div class="text-neon font-mono text-xs uppercase tracking-widest mb-3">// ABOUT AZAAN WEB STUDIO</div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-6">Driven by Design, Obsessed with Quality</h2>
-                    <p class="text-gray-300 text-base leading-relaxed mb-6">
-                        At AZAAN WEB STUDIO, we don't just build templates; we craft bespoke digital experiences that give businesses an unfair aesthetic advantage.
-                    </p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
-                        Whether you are a startup needing an explosive launch landing page or an established brand looking for a modern redesign, we combine futuristic UI/UX with rock-solid front-end execution.
-                    </p>
-
-                    <div class="flex flex-wrap gap-3">
-                        <span class="px-3 py-1.5 rounded-lg bg-neon/10 border border-neon/30 text-neon font-mono text-xs font-semibold">#UIUXDesign</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-neon/10 border border-neon/30 text-neon font-mono text-xs font-semibold">#WebDesign</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-neon/10 border border-neon/30 text-neon font-mono text-xs font-semibold">#FrontEndDev</span>
-                        <span class="px-3 py-1.5 rounded-lg bg-neon/10 border border-neon/30 text-neon font-mono text-xs font-semibold">#CyberpunkAesthetics</span>
-                    </div>
-                </div>
-
-                <!-- Testimonials Grid -->
-                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="glass-card p-6 rounded-2xl border border-white/5 relative">
-                        <div class="flex items-center gap-1 text-neon mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                        </div>
-                        <p class="text-gray-300 text-sm italic mb-6">
-                            "AZAAN WEB STUDIO completely transformed our online store. Our conversion rate jumped by 45% within two weeks of launching the new site!"
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-neon/20 border border-neon flex items-center justify-center font-bold text-neon font-mono">
-                                SK
-                            </div>
-                            <div>
-                                <div class="font-bold text-sm text-white">Sameer Khan</div>
-                                <div class="text-xs text-gray-400">Founder, Aether Tech</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card p-6 rounded-2xl border border-white/5 relative">
-                        <div class="flex items-center gap-1 text-neon mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                            <i data-lucide="star" class="w-4 h-4 fill-neon"></i>
-                        </div>
-                        <p class="text-gray-300 text-sm italic mb-6">
-                            "The neon aesthetic and attention to detail were mind-blowing. Fast, professional, and understood our vision right from day one."
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-neon/20 border border-neon flex items-center justify-center font-bold text-neon font-mono">
-                                AR
-                            </div>
-                            <div>
-                                <div class="font-bold text-sm text-white">Ali Raza</div>
-                                <div class="text-xs text-gray-400">CEO, Nexus Solutions</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow"><span>04</span> / SELECTED WORK</p>
+          <h2>Projects That Bring Ideas<br><span class="gradient-text">To Life.</span></h2>
+          <p class="section-description">
+            A showcase layout for your best website projects.
+            Replace these sample entries with your real work.
+          </p>
         </div>
+
+        <div class="project-filters reveal" role="group" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="business">Business</button>
+          <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+          <button class="filter-btn" data-filter="creative">Creative</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal" data-category="ecommerce">
+            <div class="project-art art-fashion">
+              <div class="mock-browser">
+                <div class="mock-top"><span></span><span></span><span></span></div>
+                <div class="fashion-mock">
+                  <span class="mock-brand">VIRAL.</span>
+                  <div class="fashion-circle"></div>
+                  <strong>STYLE YOUR<br>OWN STORY.</strong>
+                  <small>COLLECTION / 2026</small>
+                </div>
+              </div>
+              <span class="project-type">E-COMMERCE</span>
+            </div>
+            <div class="project-info">
+              <div><h3>Fashion Store</h3><p>Online shopping experience</p></div>
+              <a href="#contact" class="project-link" aria-label="Ask about Fashion Store">↗</a>
+            </div>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </article>
+
+          <article class="project-card reveal" data-category="business">
+            <div class="project-art art-agency">
+              <div class="agency-mock">
+                <span class="agency-logo">STUDIO<span>.</span></span>
+                <div class="agency-circle"></div>
+                <p>DESIGN THAT<br><b>MOVES YOU.</b></p>
+                <span class="agency-mini">CREATIVE DIGITAL AGENCY</span>
+              </div>
+              <span class="project-type">BUSINESS</span>
+            </div>
+            <div class="project-info">
+              <div><h3>Agency Website</h3><p>Digital brand presence</p></div>
+              <a href="#contact" class="project-link" aria-label="Ask about Agency Website">↗</a>
+            </div>
+            <div class="project-tags"><span>Web Design</span><span>Responsive UI</span></div>
+          </article>
+
+          <article class="project-card reveal" data-category="creative">
+            <div class="project-art art-portfolio">
+              <div class="portfolio-mock">
+                <span class="portfolio-label">CREATIVE / 001</span>
+                <div class="portfolio-big">MAKE<br>IT <i>MATTER.</i></div>
+                <div class="portfolio-orb"></div>
+                <span class="portfolio-footer">DESIGN · CODE · CREATE</span>
+              </div>
+              <span class="project-type">CREATIVE</span>
+            </div>
+            <div class="project-info">
+              <div><h3>Creative Portfolio</h3><p>Bold visual storytelling</p></div>
+              <a href="#contact" class="project-link" aria-label="Ask about Creative Portfolio">↗</a>
+            </div>
+            <div class="project-tags"><span>UI Design</span><span>Animation</span></div>
+          </article>
+        </div>
+        <p class="projects-note">These are visual sample concepts, not live client projects. Add your real project links before publishing.</p>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 relative z-10 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-16">
-                    <div class="text-neon font-mono text-xs uppercase tracking-widest mb-3">// START A PROJECT</div>
-                    <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mb-4">Let's Create Something Epic</h2>
-                    <p class="text-gray-400 text-sm max-w-lg mx-auto">Have a project in mind or want to discuss a new website design? Fill out the form or reach out directly.</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                    <!-- Quick Badges / Contact Details -->
-                    <div class="md:col-span-5 space-y-6">
-                        <div class="glass-card p-6 rounded-2xl border border-white/5 flex items-center gap-4 hover:border-neon/40 transition-all">
-                            <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center text-neon shrink-0">
-                                <i data-lucide="mail" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs font-mono text-gray-400">Direct Email</div>
-                                <a href="mailto:azaanwebstudio@gmail.com" class="text-white font-bold hover:text-neon transition-colors text-sm sm:text-base">azaanwebstudio@gmail.com</a>
-                            </div>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-2xl border border-white/5 flex items-center gap-4 hover:border-neon/40 transition-all">
-                            <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center text-neon shrink-0">
-                                <i data-lucide="message-circle" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs font-mono text-gray-400">WhatsApp / Call</div>
-                                <a href="https://wa.me/923322528535" target="_blank" class="text-white font-bold hover:text-neon transition-colors text-sm sm:text-base">03322528535</a>
-                            </div>
-                        </div>
-
-                        <div class="glass-card p-6 rounded-2xl border border-white/5 flex items-center gap-4 hover:border-neon/40 transition-all">
-                            <div class="w-12 h-12 rounded-xl bg-neon/10 border border-neon/30 flex items-center justify-center text-neon shrink-0">
-                                <i data-lucide="map-pin" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs font-mono text-gray-400">Location</div>
-                                <div class="text-white font-bold text-sm sm:text-base">Available Worldwide</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="md:col-span-7 glass-card p-8 rounded-2xl border border-white/10 relative">
-                        <form id="contact-form" class="space-y-5">
-                            <div>
-                                <label class="block text-xs font-mono text-gray-300 uppercase mb-2">Your Name</label>
-                                <input type="text" required placeholder="your name" class="w-full px-4 py-3 rounded-xl bg-dark-bg/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all text-sm">
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-mono text-gray-300 uppercase mb-2">Your Email</label>
-                                <input type="email" required placeholder="your email" class="w-full px-4 py-3 rounded-xl bg-dark-bg/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all text-sm">
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-mono text-gray-300 uppercase mb-2">Service Needed</label>
-                                <select required class="w-full px-4 py-3 rounded-xl bg-dark-bg/80 border border-white/10 text-gray-300 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all text-sm">
-                                    <option value="" disabled selected>Select a Service</option>
-                                    <option value="custom-web">Custom Web Design</option>
-                                    <option value="uiux">UI/UX & Figma Prototyping</option>
-                                    <option value="frontend">Front-End Development</option>
-                                    <option value="ecommerce">E-Commerce / Landing Page</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label class="block text-xs font-mono text-gray-300 uppercase mb-2">Project Message</label>
-                                <textarea rows="4" required placeholder="Tell us about your project requirements, goals, and timeline..." class="w-full px-4 py-3 rounded-xl bg-dark-bg/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-neon focus:ring-1 focus:ring-neon transition-all text-sm"></textarea>
-                            </div>
-
-                            <button type="submit" class="w-full py-4 rounded-xl bg-neon text-black font-extrabold text-xs uppercase tracking-wider hover:bg-neon-bright transition-all shadow-[0_0_25px_rgba(0,255,102,0.3)] flex items-center justify-center gap-2">
-                                <span>Send Message</span>
-                                <i data-lucide="send" class="w-4 h-4"></i>
-                            </button>
-                        </form>
-
-                        <!-- Success Alert Banner (Hidden by default) -->
-                        <div id="contact-success" class="hidden absolute inset-0 bg-dark-card/95 backdrop-blur-md rounded-2xl flex flex-col items-center justify-center p-8 text-center z-20">
-                            <div class="w-16 h-16 rounded-full bg-neon/20 border border-neon flex items-center justify-center text-neon mb-4 animate-bounce">
-                                <i data-lucide="check-circle" class="w-8 h-8"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Message Sent Successfully!</h3>
-                            <p class="text-gray-300 text-sm max-w-xs mb-6">Thank you for reaching out to AZAAN WEB STUDIO. We will get back to you within 24 hours.</p>
-                            <button onclick="resetContactForm()" class="px-6 py-2.5 rounded-lg border border-neon text-neon font-mono text-xs uppercase font-bold hover:bg-neon hover:text-black transition-all">
-                                Send Another Message
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- WORK PROCESS -->
+    <section class="section section-border" id="process">
+      <div class="container">
+        <div class="section-heading centered reveal">
+          <p class="eyebrow"><span>05</span> / HOW I WORK</p>
+          <h2>From First Idea To <span class="gradient-text">Launch.</span></h2>
+          <p class="section-description">A clear process helps turn your vision into a polished website.</p>
         </div>
+
+        <div class="process-grid">
+          <article class="process-step reveal"><span class="process-number">01</span><div class="process-icon">⌕</div><h3>Discover</h3><p>Understand your goals, audience and project requirements.</p></article>
+          <article class="process-step reveal"><span class="process-number">02</span><div class="process-icon">◈</div><h3>Design</h3><p>Plan the layout, visual style and user experience.</p></article>
+          <article class="process-step reveal"><span class="process-number">03</span><div class="process-icon">&lt;/&gt;</div><h3>Develop</h3><p>Build and test responsive layouts and features.</p></article>
+          <article class="process-step reveal"><span class="process-number">04</span><div class="process-icon">↗</div><h3>Deliver</h3><p>Review the result and prepare it for launch.</p></article>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/10 bg-dark-bg relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                
-                <!-- Brand -->
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-neon/10 border border-neon/40 flex items-center justify-center text-neon font-mono font-bold text-xs">
-                        AWS
-                    </div>
-                    <span class="font-bold text-white tracking-wider text-sm">AZAAN WEB STUDIO</span>
-                </div>
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-copy">
+            <p class="eyebrow"><span>06</span> / LET'S CONNECT</p>
+            <h2>Have A Project<br>In <span class="gradient-text">Mind?</span></h2>
+            <p>Tell me about your idea. Let's discuss how we can turn it into a great digital experience.</p>
 
-                <!-- Copyright -->
-                <div class="text-xs font-mono text-gray-500">
-                    &copy; 2026 AZAAN WEB STUDIO. All rights reserved.
-                </div>
-
-                <!-- Social Links -->
-                <div class="flex items-center gap-4 text-gray-400">
-                    <a href="#" class="p-2 rounded-lg bg-white/5 hover:text-neon hover:bg-white/10 transition-colors" aria-label="Behance"><i data-lucide="figma" class="w-4 h-4"></i></a>
-                    <a href="#" class="p-2 rounded-lg bg-white/5 hover:text-neon hover:bg-white/10 transition-colors" aria-label="Dribbble"><i data-lucide="dribbble" class="w-4 h-4"></i></a>
-                    <a href="#" class="p-2 rounded-lg bg-white/5 hover:text-neon hover:bg-white/10 transition-colors" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-                    <a href="#" class="p-2 rounded-lg bg-white/5 hover:text-neon hover:bg-white/10 transition-colors" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                    <a href="#" class="p-2 rounded-lg bg-white/5 hover:text-neon hover:bg-white/10 transition-colors" aria-label="GitHub"><i data-lucide="github" class="w-4 h-4"></i></a>
-                </div>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">✉</span>
+              <div><small>EMAIL</small><a id="emailLink" href="mailto:YOUR_EMAIL@example.com">YOUR_EMAIL@example.com</a></div>
             </div>
-        </div>
-    </footer>
+            <div class="contact-detail">
+              <span class="contact-detail-icon">↗</span>
+              <div><small>BRAND</small><span>AZAAN WEB STUDIO (AWS)</span></div>
+            </div>
+            <p class="contact-setup-note">Update the placeholder email in index.html before publishing.</p>
+          </div>
 
-    <!-- Case Study / Project Details Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-        <div class="glass-card bg-dark-card border border-white/10 w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl relative animate-float">
-            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full bg-black/60 text-gray-300 hover:text-neon z-10">
-                <i data-lucide="x" class="w-5 h-5"></i>
+          <form class="contact-form" id="contactForm"
+      action="https://formspree.io/f/mvkzblpa"
+      method="POST">
+            <div class="form-heading"><h3>Send A Message</h3><span>✳</span></div>
+
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required minlength="2" autocomplete="name">
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+
+            <label for="subject">What do you need?</label>
+            <select id="subject" name="subject" required>
+              <option value="">Choose a service</option>
+              <option>Website Development</option>
+              <option>E-commerce Website</option>
+              <option>Landing Page</option>
+              <option>Website Redesign</option>
+              <option>Other Project</option>
+            </select>
+
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tell me a little about your project..." required minlength="10"></textarea>
+
+            <button type="submit" class="btn btn-primary form-submit">
+              submit message <span>↗</span>
             </button>
-            <div class="relative aspect-video">
-                <img id="modal-img" src="" alt="Project" class="w-full h-full object-cover">
-                <span id="modal-category" class="absolute bottom-4 left-4 px-3 py-1 rounded-full font-mono text-[10px] uppercase font-bold bg-black/80 border border-neon/30 text-neon">Category</span>
-            </div>
-            <div class="p-6">
-                <h3 id="modal-title" class="text-2xl font-bold text-white mb-2">Project Title</h3>
-                <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed mb-6">Detailed project description goes here...</p>
-                <div class="flex items-center justify-between border-t border-white/10 pt-4">
-                    <span class="text-xs font-mono text-neon">// Built by Azaan Web Studio</span>
-                    <button onclick="closeModal()" class="px-5 py-2 rounded-lg bg-neon text-black font-mono text-xs uppercase font-bold hover:bg-neon-bright transition-all">Close</button>
-                </div>
-            </div>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+           <p class="form-note">Your message will be sent securely through Formspree.</p>
+          </form>
         </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="brand footer-brand">
+        <span class="brand-mark">A<span>W</span>S</span>
+        <span class="brand-name">AZAAN WEB <strong>STUDIO</strong></span>
+      </a>
+      <p>Creating digital experiences with purpose.</p>
+      <a href="#home" class="back-top">BACK TO TOP ↑</a>
     </div>
+    <div class="container footer-bottom">
+      <span>© <span id="currentYear"></span> AZAAN WEB STUDIO. All rights reserved.</span>
+      <span>DESIGNED WITH <b>♥</b> BY AWS</span>
+    </div>
+  </footer>
 
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+  <script>
+    
+/* =========================================
+   AZAAN WEB STUDIO (AWS)
+   Portfolio Interactions
+========================================= */
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+document.addEventListener("DOMContentLoaded", () => {
+  const pageLoader = document.getElementById("pageLoader");
+  const header = document.getElementById("header");
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  const navItems = document.querySelectorAll(".nav-link");
+  const revealItems = document.querySelectorAll(".reveal");
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projectCards = document.querySelectorAll(".project-card");
+  const contactForm = document.getElementById("contactForm");
+  const formStatus = document.getElementById("formStatus");
+  const currentYear = document.getElementById("currentYear");
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  // 1. PAGE LOADER
+  function hideLoader() {
+    if (pageLoader) {
+      pageLoader.classList.add("loaded");
+    }
+  }
 
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
+  window.addEventListener("load", hideLoader);
 
-        // Portfolio Category Filter Logic
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
+  // Fallback: loader should not remain visible indefinitely.
+  window.setTimeout(hideLoader, 2500);
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-neon', 'text-black');
-                    b.classList.add('glass-card', 'text-gray-300');
-                });
-                btn.classList.add('active', 'bg-neon', 'text-black');
-                btn.classList.remove('glass-card', 'text-gray-300');
+  // 2. STICKY HEADER
+  function updateHeader() {
+    if (header) {
+      header.classList.toggle("scrolled", window.scrollY > 30);
+    }
+  }
 
-                const filter = btn.getAttribute('data-filter');
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
 
-                portfolioItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
+  // 3. MOBILE NAVIGATION
+  function closeMenu() {
+    if (!menuToggle || !navLinks) return;
 
-        // Modal Handler
-        function openModal(title, desc, category, imgUrl) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal-category').innerText = category;
-            document.getElementById('modal-img').src = imgUrl;
-            document.getElementById('project-modal').classList.remove('hidden');
-        }
+    menuToggle.classList.remove("active");
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+    document.body.classList.remove("menu-open");
+  }
 
-        function closeModal() {
-            document.getElementById('project-modal').classList.add('hidden');
-        }
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
 
-        // Contact Form Submission Handler
-        const contactForm = document.getElementById('contact-form');
-        const contactSuccess = document.getElementById('contact-success');
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            contactSuccess.classList.remove('hidden');
-        });
+      document.body.classList.toggle("menu-open", isOpen);
+    });
 
-        function resetContactForm() {
-            contactForm.reset();
-            contactSuccess.classList.add('hidden');
-        }
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-        // Header Background Blur on Scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('shadow-lg', 'bg-dark-bg/95');
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInsideMenu = navLinks.contains(event.target);
+      const clickedToggle = menuToggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 800) {
+        closeMenu();
+      }
+    });
+  }
+
+  // 4. ACTIVE NAVIGATION LINK
+  const pageSections = document.querySelectorAll("main section[id]");
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          const currentId = entry.target.id;
+
+          navItems.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${currentId}`;
+
+            link.classList.toggle("active", isActive);
+
+            if (isActive) {
+              link.setAttribute("aria-current", "location");
             } else {
-                header.classList.remove('shadow-lg', 'bg-dark-bg/95');
+              link.removeAttribute("aria-current");
             }
+          });
         });
-    </script>
+      },
+      {
+        rootMargin: "-25% 0px -60% 0px",
+        threshold: 0
+      }
+    );
+
+    pageSections.forEach((section) => {
+      sectionObserver.observe(section);
+    });
+  }
+
+  // 5. SCROLL REVEAL ANIMATIONS
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => {
+      item.classList.add("visible");
+    });
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+      }
+    );
+
+    revealItems.forEach((item) => {
+      revealObserver.observe(item);
+    });
+  }
+
+  // 6. PROJECT CATEGORY FILTERS
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedFilter = button.dataset.filter;
+
+      filterButtons.forEach((filterButton) => {
+        const isActive = filterButton === button;
+
+        filterButton.classList.toggle("active", isActive);
+        filterButton.setAttribute(
+          "aria-pressed",
+          String(isActive)
+        );
+      });
+
+      projectCards.forEach((card) => {
+        const category = card.dataset.category;
+        const shouldShow =
+          selectedFilter === "all" || category === selectedFilter;
+
+        card.classList.toggle("is-hidden", !shouldShow);
+      });
+    });
+
+    button.setAttribute(
+      "aria-pressed",
+      String(button.classList.contains("active"))
+    );
+  });
+
+  // 7. CONTACT FORM
+  // This form prepares an email in the visitor's email application.
+  // Replace the placeholder with your actual email address.
+ 
+
+// 7. CONTACT FORM - FORMSPREE INTEGRATION
+
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    formStatus.classList.remove("error");
+    formStatus.textContent = "";
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      formStatus.textContent = "Please complete all required fields.";
+      formStatus.classList.add("error");
+      return;
+    }
+
+    const submitButton = contactForm.querySelector(
+      'button[type="submit"]'
+    );
+
+    const originalButtonHTML = submitButton
+      ? submitButton.innerHTML
+      : "";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending message...";
+    }
+
+    formStatus.textContent = "Sending your message...";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        formStatus.textContent =
+          "Thank you! Your message has been sent successfully.";
+
+        formStatus.classList.remove("error");
+        contactForm.reset();
+      } else {
+        const result = await response.json().catch(() => ({}));
+
+        formStatus.textContent =
+          result.errors?.map(error => error.message).join(", ") ||
+          "Message could not be sent. Please try again.";
+
+        formStatus.classList.add("error");
+      }
+    } catch (error) {
+      formStatus.textContent =
+        "Network error. Please check your internet and try again.";
+
+      formStatus.classList.add("error");
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonHTML;
+      }
+    }
+  });
+}
+
+  // 8. AUTOMATIC COPYRIGHT YEAR
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
+});
+
+  </script>
 </body>
 </html>
