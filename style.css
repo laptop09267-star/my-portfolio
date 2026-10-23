@@ -1874,3 +1874,22 @@ textarea:focus-visible {
     transform: none;
   }
 }
+
+
+
+/* Laptop/Desktop only */
+@media screen and (min-width: 1024px) {
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+  }
+
+  .hero-content {
+    position: relative;
+  }
+
+  .hero-visual {
+    display: block;
+  }
+}
