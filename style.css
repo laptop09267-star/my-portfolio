@@ -1877,19 +1877,12 @@ textarea:focus-visible {
 
 
 
-/* Laptop/Desktop only */
+
+/* Laptop only: adjust AWS social row */
 @media screen and (min-width: 1024px) {
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    align-items: center;
-  }
-
-  .hero-content {
+  .hero-social {
+    margin-top: 20px;
     position: relative;
-  }
-
-  .hero-visual {
-    display: block;
+    left: 0;
   }
 }
