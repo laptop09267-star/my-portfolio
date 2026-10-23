@@ -1878,11 +1878,3 @@ textarea:focus-visible {
 
 
 
-/* Laptop only: adjust AWS social row */
-@media screen and (min-width: 1024px) {
-  .hero-social {
-    margin-top: 20px;
-    position: relative;
-    left: 0;
-  }
-}
